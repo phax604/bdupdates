@@ -1,6 +1,5 @@
 import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
-import { generateSearch } from "~/lib/search";
 
 export async function POST(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get("secret");
@@ -10,7 +9,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: "Invalid token" }, { status: 401 });
   }
 
-  await generateSearch();
+  // await generateSearch();
 
   revalidatePath(`/posts/${data.issue.number}`);
 
