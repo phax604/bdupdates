@@ -1,5 +1,9 @@
-import ListLayout from "~/components/ListLayout";
+import dynamic from "next/dynamic";
 import { fetchIssues, fetchTagsCount } from "~/lib/github";
+
+const ListLayout = dynamic(() => import("~/components/ListLayout"), {
+  ssr: false,
+});
 
 export const dynamicParams = true;
 

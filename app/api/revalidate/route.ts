@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get("secret");
+  console.log(await request.json());
+
   const data = await request.json();
 
   if (secret !== process.env.REVALIDATION_TOKEN) {

@@ -3,7 +3,6 @@ import siteMetadata from "~/lib/siteMetadata";
 import Link from "../Link";
 import MobileNav from "../MobileNav";
 import SearchButton from "../SearchButton";
-import ThemeSwitch from "../ThemeSwitch";
 
 const Header = () => {
   return (
@@ -36,7 +35,7 @@ const Header = () => {
             </Link>
           ))}
         <SearchButton />
-        <ThemeSwitch />
+        {/* <ThemeSwitch /> */}
         <MobileNav />
       </div>
     </header>
